@@ -20,7 +20,7 @@ body, html{
 body {
   background-color: var(--bg-color-3);
 }
-.footer, header {
+.footer, header, nav.nav1 {
   padding: var(--general-padding);
 }
 figure.imageDiv,
@@ -44,11 +44,43 @@ body {
 }
 /** TITLE AND SEARCH BAR **/
 nav.nav1 {
-  height: 40px;
+  height: auto;
   display: flex;
   justify-content: space-between;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  flex-wrap: wrap;
 }
-
+nav.nav1 h1 {
+  font-size: 30px;
+  color: var(--bg-color-2);
+}
+div input#search {
+  padding: 2px;
+  height: 30px;
+}
+i.fas.fa-search {
+  display: inline-block;
+  border-top: 1px solid gray;
+  border-bottom: 1px solid gray;
+  border-right: 1px solid gray;
+  font-size: 20px;
+  padding: 4px;
+  color: var(--bg-color-2);
+  position: relative;
+  top: 2.5px;
+  right: 4px;
+}
+i.fas.fa-search:hover {
+  color: white;
+  background-color: var(--bg-color-2)
+}
+@media (max-width: 460px) {
+  nav.nav1 h1 {
+    font-size: 25px;
+    margin-top: 3px;
+  }
+}
 
 /** NAVBAR IN HEADER **/
 header {
