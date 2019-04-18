@@ -1,0 +1,266 @@
+/** CSS VARIABLES **/
+:root {
+  --bg-color-1: rgb(9, 190, 100);
+  --bg-color-2: rgb(10, 103, 87);
+  --bg-color-3: #f5f5f5;
+  --general-margin: 0 7%;
+  --general-padding: 0 7%;
+}
+
+/** GENERAL **/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body, html{
+  padding:0;
+  margin:0;
+}
+body {
+  background-color: var(--bg-color-3);
+}
+.footer, header {
+  padding: var(--general-padding);
+}
+figure.imageDiv,
+main.featuresDiv,
+main.productsDiv {
+  background-color: white;
+}
+
+/**STICKY FOOTER CODE**/
+html {
+  height: 100%;
+}
+body {
+  min-height: 100%;
+  display: grid;
+  grid-template-rows: 1fr auto;
+}
+.footer {
+  grid-row-start: 2;
+  grid-row-end: 3;
+}
+/** TITLE AND SEARCH BAR **/
+nav.nav1 {
+  height: 40px;
+  display: flex;
+  justify-content: space-between;
+}
+
+
+/** NAVBAR IN HEADER **/
+header {
+  background-color: var(--bg-color-1);
+}
+.topnav {
+  height: 40px;
+}
+ul.topnav li a {
+  display: inline-block;
+  text-decoration: none;
+  color: white;
+  width: 100px;
+  height: 100%;
+  padding-top: 10px;
+  text-align: center;
+}
+ul.topnav li a.brand {
+  font-style: italic;
+  font-weight: bold;
+}
+ul.topnav li {
+  list-style: none;
+  display: inline-block; 
+}
+.active, ul.topnav li.a:hover {
+  background-color: var(--bg-color-2);
+}
+li.right {
+  float: right;
+}
+a.humburger{
+  display: none !important;
+}
+@media (max-width : 717px){
+  .topnav {
+    display:flex;
+    flex-direction: column;
+    height: auto;
+  }
+  ul.topnav li {
+    margin: 2px 0;
+    border-radius: 5px;
+  }
+  ul.topnav li a {
+    padding-bottom: 10px;
+    text-align: left;
+    padding-left: 20px;
+  }
+  ul.topnav li.b {
+    display: none;
+  }
+  .topnav > li:first-child {
+    margin-top: 15px;
+  }
+  .topnav > li:last-child {
+    margin-bottom: 15px;
+  }
+  a.humburger {
+    display: unset !important;
+    float: right;
+    margin-right: 26px !important;
+  }
+  i.fas.fa-bars {
+   font-size: 25px;
+   float: right;
+  }
+  i.fas.fa-bars:hover {
+    color: var(--bg-color-2);
+  }
+
+}
+
+/** FRONT IMAGE SECTION **/
+figure.imageDiv {
+  margin: var(--general-margin);
+}
+.sliderimage, figure.imageDiv {
+  height: 400px;
+}
+figure div.text {
+  position: relative;
+  bottom: 90px;
+  background-color: black;
+  color: white;
+  width: 250px;
+  height: 90px;
+  opacity: 0.6;
+  padding: 10px 12px;
+  font-size: 19px;
+}
+@media (max-width: 717px) {
+  .sliderimage, figure.imageDiv {
+    height: 300px;
+  }
+}
+@media (max-width: 500px) {
+  figure.imageDiv {
+    margin: 0;
+  }
+  figure div.text {
+    width: 180px;
+    font-size: 16px;
+  }
+}
+
+/** MAIN - FEATURED CATEGORY SECTION **/
+main.featuresDiv {
+  margin: var(--general-margin);
+}
+section.featuresHeading {
+  height: auto;
+  padding: 10px 15px;
+  font-size: 23px;
+  font-weight: bold;
+  word-spacing: 4px;
+  letter-spacing: 2px;
+}
+div.features {
+  display: flex;
+  flex-wrap: wrap;
+  border: 0.07px solid grey;
+  border-right: 1px solid grey;
+  border-bottom: 1px solid grey;
+}
+a.eachFeature {
+  flex-basis: 200px;
+  flex-grow: 1;
+  height: 250px;
+  border-left: 1px solid grey;
+  border-top: 1px solid grey;
+  overflow: hidden;
+  text-decoration: none;
+}
+a.eachFeature img {
+  height: 80%;
+  width: 100%;
+}
+a.eachFeature div {
+  text-align: center;
+  padding-top: 13px;
+  font-size: 19px;
+}
+@media (max-width: 500px) {
+  main.featuresDiv {
+    margin: 0;
+  }
+}
+
+/** PRODUCT SECTION **/
+main.productsDiv {
+  margin: var(--general-margin);
+}
+section.productsHeading {
+  height: auto;
+  padding: 10px 15px;
+  font-size: 23px;
+  font-weight: bold;
+  word-spacing: 4px;
+  letter-spacing: 2px;
+}
+div.products {
+  display: flex;
+  flex-wrap: wrap;
+  border: 0.07px solid grey;
+  border-right: 1px solid grey;
+  border-bottom: 1px solid grey;
+}
+a.eachProduct {
+  flex-basis: 200px;
+  flex-grow: 1;
+  height: 300px;
+  border-left: 1px solid grey;
+  border-top: 1px solid grey;
+  overflow: hidden;
+  text-decoration: none;
+}
+a.eachProduct img {
+  height: 210;
+  width: 100%;
+}
+a.eachProduct div,
+a.eachProduct p {
+  text-align: center;
+  margin-top: 13px;
+  font-size: 19px;
+  height: 7.5%;
+}
+@media (max-width: 500px) {
+  main.productsDiv {
+    margin: 0;
+  }
+}
+
+/** FOOTER **/
+.footer {
+  background-color: var(--bg-color-1);
+}
+.footercontent {
+  width: 400px;
+  margin: 0 auto;
+  display: grid;
+  justify-items: center;
+  color: white;
+}
+.footercontent p, 
+.footercontent h5 {
+  padding: 5px;
+}
+p.copyright {
+  margin-top: 15px;
+}
+p.backtotop {
+  margin-bottom: 20px;
+}
