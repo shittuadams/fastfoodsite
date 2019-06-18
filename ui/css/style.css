@@ -6,7 +6,6 @@
   --general-margin: 0 7%;
   --general-padding: 0 7%;
 }
-
 /** GENERAL **/
 * {
   margin: 0;
@@ -14,13 +13,14 @@
   box-sizing: border-box;
 }
 body, html{
-  padding:0;
-  margin:0;
+  padding: 0;
+  margin: 0;
+  overflow-x: hidden;
 }
 body {
   background-color: var(--bg-color-3);
 }
-.footer, header, nav.nav1 {
+.footer, nav.nav1, main.aboutUs, .formcontainer {
   padding: var(--general-padding);
 }
 figure.imageDiv,
@@ -83,6 +83,12 @@ i.fas.fa-search:hover {
 }
 
 /** NAVBAR IN HEADER **/
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+}
 header {
   background-color: var(--bg-color-1);
 }
@@ -106,8 +112,11 @@ ul.topnav li {
   list-style: none;
   display: inline-block; 
 }
-.active, ul.topnav li.a:hover {
+.active {
   background-color: var(--bg-color-2);
+}
+ul.topnav li.a:hover {
+  background-color: rgb(2, 160, 81);
 }
 li.right {
   float: right;
@@ -115,7 +124,7 @@ li.right {
 a.humburger{
   display: none !important;
 }
-@media (max-width : 717px){
+@media (max-width : 725px){
   .topnav {
     display:flex;
     flex-direction: column;
@@ -150,6 +159,9 @@ a.humburger{
   }
   i.fas.fa-bars:hover {
     color: var(--bg-color-2);
+  }
+  header {
+    padding: 0 30px;
   }
 
 }
@@ -274,6 +286,226 @@ a.eachProduct p {
     margin: 0;
   }
 }
+
+/** ABOUT US PAGE **/ 
+main.aboutUs {
+  font-size: 22px;
+  line-height: 34px;
+  word-spacing: 2.5px;  
+}
+iframe.aboutiframe {
+  display: block;
+  margin: 0 auto;
+}
+@media (max-width: 770px) {
+  iframe.aboutiframe {
+    width: 300px;
+    height: 220px;
+  }
+}
+
+/** CONTACT PAGE **/
+
+input[type=text], input[type=password], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+input[type=submit] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+.formcontainer {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+}
+
+
+/** LOGIN **/
+form.loginform {
+  padding: 20px;
+  max-width: 400px;
+  margin: 0 auto;
+  background-color:  #e9e6e6;
+  border-radius: 10px;
+}
+
+/** PRODUCT CARD - PRODUCT REVIEW **/
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 400px;
+  margin: auto;
+  text-align: center;
+  font-family: arial;
+}
+
+.card img.imagereview {
+  height: 350px;
+}
+
+.price {
+  color: grey;
+  font-size: 22px;
+}
+
+.card a {
+  border: none;
+  outline: 0;
+  padding: 12px;
+  color: white;
+  background-color: var(--bg-color-1);
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+  display: block;
+  text-decoration: none;
+}
+
+.card a.shop {
+  background-color: var(--bg-color-2);
+}
+
+.card a:hover {
+  opacity: 0.7;
+}
+
+
+
+/** Checkout page **/
+.cart-table {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.cart-table, td {
+  border: 1px solid rgb(217, 217, 221);
+  border-collapse: collapse;
+}
+td {
+  padding: 5px;
+}
+
+.left-td {
+  text-align: left;
+}
+.bold {
+  font-weight: bold;
+}
+td.quantity {
+  display: flex;
+  justify-content: space-between;
+}
+
+.row {
+  display: -ms-flexbox; /* IE10 */
+  display: flex;
+  -ms-flex-wrap: wrap; /* IE10 */
+  flex-wrap: wrap;
+  margin: 0 -16px;
+}
+
+.col-25 {
+  -ms-flex: 25%; /* IE10 */
+  flex: 25%;
+}
+
+.col-50 {
+  -ms-flex: 50%; /* IE10 */
+  flex: 50%;
+}
+
+.col-75 {
+  -ms-flex: 75%; /* IE10 */
+  flex: 75%;
+}
+
+.col-25,
+.col-50,
+.col-75 {
+  padding: 0 16px;
+}
+
+.checkout-container {
+  background-color: #f2f2f2;
+  padding: 5px 20px 15px 20px;
+  border: 1px solid lightgrey;
+  border-radius: 3px;
+}
+
+input[type=text] {
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+label {
+  margin-bottom: 10px;
+  display: block;
+}
+
+.icon-container {
+  margin-bottom: 20px;
+  padding: 7px 0;
+  font-size: 24px;
+}
+
+.btn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px;
+  margin: 10px 0;
+  border: none;
+  width: 100%;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 17px;
+}
+
+.btn:hover {
+  background-color: #45a049;
+}
+
+a {
+  color: #2196F3;
+}
+
+hr {
+  border: 1px solid lightgrey;
+}
+
+span.price {
+  float: right;
+  color: grey;
+}
+
+/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other (also change the direction - make the "cart" column go on top) */
+@media (max-width: 800px) {
+  .row {
+    flex-direction: column-reverse;
+  }
+  .col-25 {
+    margin-bottom: 20px;
+  }
+}
+
 
 /** FOOTER **/
 .footer {

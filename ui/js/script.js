@@ -1,3 +1,23 @@
+// STICKY NAVBAR
+// When the user scrolls the page, execute myFunction 
+window.onscroll = function() {myFunction()};
+
+// Get the navbar
+var navbar = document.querySelector("header");
+
+// Get the offset position of the navbar
+var sticky = navbar.offsetTop;
+
+// Add the sticky class to the navbar when you reach its scroll position. Remove "sticky" when you leave the scroll position
+function myFunction() {
+  if (window.pageYOffset > sticky) {
+    navbar.classList.add("sticky")
+  } else {
+    navbar.classList.remove("sticky");
+  }
+}
+
+
 // DROPDOWN MENU
 let navToggle = document.querySelector('a.humburger');
 let navBar = document.querySelectorAll('ul.topnav li.a');
@@ -50,3 +70,15 @@ setInterval(() => {
   count++;
   
 }, 3300);
+
+
+// Modal Login Form
+var modal = document.getElementById('id01');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+
