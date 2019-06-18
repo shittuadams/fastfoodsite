@@ -411,6 +411,9 @@ td.quantity {
   display: flex;
   justify-content: space-between;
 }
+td.quantity i:hover {
+  cursor: pointer;
+}
 
 .row {
   display: -ms-flexbox; /* IE10 */
